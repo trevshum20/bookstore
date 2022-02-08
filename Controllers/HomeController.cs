@@ -37,7 +37,7 @@ namespace Bookstore.Controllers
             {
                 YareContext.Add(req);
                 YareContext.SaveChanges();
-                return View("Confirmation");
+                return RedirectToAction("Quadrant");
 
             }
             else
@@ -52,6 +52,8 @@ namespace Bookstore.Controllers
         public IActionResult Quadrant()
         {
             var tasks = YareContext.Responses
+                .Include(x => x.Category)
+                .Where(x => x.Completed == "false")
                 .ToList();
             return View(tasks);
         }
@@ -91,6 +93,15 @@ namespace Bookstore.Controllers
             YareContext.Responses.Remove(ar);
             YareContext.SaveChanges();
             return RedirectToAction("Quadrant");
+        }
+
+        [HttpGet]
+        public IActionResult AllTasks()
+        {
+            var tasks = YareContext.Responses
+                .Include(x => x.Category)
+                .ToList();
+            return View(tasks);
         }
     }
 }
