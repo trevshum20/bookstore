@@ -80,6 +80,17 @@ namespace Bookstore.Controllers
                 return View("AddEdit", bruv);
             }
         }
+
+        [HttpGet]
+        public IActionResult Complete(int taskId)
+        {
+            var task = YareContext.Responses.Single(x => x.TaskID == taskId);
+            task.Completed = "true";
+            YareContext.Update(task);
+            YareContext.SaveChanges();
+            return RedirectToAction("Quadrant");
+        }
+
         [HttpGet]
         public IActionResult Delete(int taskId)
         {
@@ -103,5 +114,6 @@ namespace Bookstore.Controllers
                 .ToList();
             return View(tasks);
         }
+
     }
 }
