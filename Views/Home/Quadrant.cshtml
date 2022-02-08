@@ -29,7 +29,7 @@
                         {
                             <tr>
                                 <td>@n.DueDate</td>
-                                @*<td>@n.Category</td>*@
+                                <td>@n.Category.Name</td>
                                 <td>@n.Task</td>
                                 <td>@n.Completed</td>
                                 <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskID">Edit</a></td>
@@ -50,7 +50,7 @@
                         {
                             <tr>
                                 <td>@n.DueDate</td>
-                                @*<td>@n.Category</td>*@
+                                <td>@n.Category.Name</td>
                                 <td>@n.Task</td>
                                 <td>@n.Completed</td>
                                 <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskID">Edit</a></td>
@@ -74,7 +74,7 @@
                         {
                             <tr>
                                 <td>@n.DueDate</td>
-                                @*<td>@n.Category</td>*@
+                                <td>@n.Category.Name</td>
                                 <td>@n.Task</td>
                                 <td>@n.Completed</td>
                                 <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskID">Edit</a></td>
@@ -95,11 +95,12 @@
                         {
                             <tr>
                                 <td>@n.DueDate</td>
-                                @*<td>@n.Category</td>*@
+                                <td>@n.Category.Name</td>
                                 <td>@n.Task</td>
                                 <td>@n.Completed</td>
                                 <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskID">Edit</a></td>
                                 <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@n.TaskID">Delete</a></td>
+
                             </tr>
                         }
                     }
