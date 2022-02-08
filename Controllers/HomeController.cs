@@ -42,14 +42,14 @@ namespace Bookstore.Controllers
             }
             else
             {
-                return View("Quadrants");
+                return View("Quadrant");
             }
             
         }
 
 
 
-        public IActionResult Quadrants()
+        public IActionResult Quadrant()
         {
             return View();
         }
