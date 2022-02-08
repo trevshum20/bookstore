@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Bookstore.Models
 {
-    public class MoviesContext : DbContext
+    public class TaskContext : DbContext
     {
-            public MoviesContext(DbContextOptions<MoviesContext> options) : base(options)
+            public TaskContext(DbContextOptions<TaskContext> options) : base(options)
         {
             //Leave blank
         }
@@ -22,7 +22,7 @@ namespace Bookstore.Models
                 new Category { CategoryId = 4, Name = "Church" }
             );
 
-            _ = mb.Entity<bretheren>().HasData(
+            mb.Entity<bretheren>().HasData(
 
                 new bretheren
                 {

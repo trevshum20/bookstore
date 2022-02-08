@@ -29,4 +29,7 @@
   <ItemGroup>
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\Home\Quadrants.cshtml" />
+  </ItemGroup>
 </Project>

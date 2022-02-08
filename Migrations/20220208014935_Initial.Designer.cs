@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Bookstore.Migrations
 {
-    [DbContext(typeof(MoviesContext))]
-    [Migration("20220207233733_Initial")]
+    [DbContext(typeof(TaskContext))]
+    [Migration("20220208014935_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -88,7 +88,7 @@ namespace Bookstore.Migrations
                             TaskID = 1,
                             CategoryId = 1,
                             Completed = "False",
-                            DueDate = new DateTime(2022, 2, 7, 16, 37, 33, 329, DateTimeKind.Local).AddTicks(6730),
+                            DueDate = new DateTime(2022, 2, 7, 18, 49, 35, 601, DateTimeKind.Local).AddTicks(4800),
                             Quadrant = (byte)1,
                             Task = "Home"
                         });

@@ -66,7 +66,7 @@ namespace Bookstore.Migrations
             migrationBuilder.InsertData(
                 table: "Responses",
                 columns: new[] { "TaskID", "CategoryId", "Completed", "DueDate", "Quadrant", "Task" },
-                values: new object[] { 1, 1, "False", new DateTime(2022, 2, 7, 16, 37, 33, 329, DateTimeKind.Local).AddTicks(6730), (byte)1, "Home" });
+                values: new object[] { 1, 1, "False", new DateTime(2022, 2, 7, 18, 49, 35, 601, DateTimeKind.Local).AddTicks(4800), (byte)1, "Home" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Responses_CategoryId",

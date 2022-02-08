@@ -27,7 +27,7 @@ namespace Bookstore
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<MoviesContext>(options =>
+            services.AddDbContext<TaskContext>(options =>
             {
                 options.UseSqlite(Configuration["ConnectionStrings:Connection"]);
             });
