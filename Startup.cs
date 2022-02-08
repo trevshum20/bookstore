@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Bookstore.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Bookstore
 {
@@ -24,6 +26,11 @@ namespace Bookstore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<MoviesContext>(options =>
+            {
+                options.UseSqlite(Configuration["ConnectionStrings:Connection"]);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
