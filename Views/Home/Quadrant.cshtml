@@ -6,24 +6,28 @@
 
 <h1>4 Quadrants Task List</h1><br />
 
-<div class="container">
-    
+<div class="containter">
+
     <div class="row">
         <div class="col border border-dark"><h2>Steven Covey's Time Management Matrix</h2></div>
     </div>
 
     <div class="row">
-        <div class="col-2 border border-dark"></div>
-        <div class="col-5 border border-dark"><h3>Urgent</h3></div>
-        <div class="col-5 border border-dark"><h3>Not Urgent</h3></div>
-    </div>
-
-    <div class="row">
-        <div class="col-2 border border-dark"><h3>Important</h3></div>
-        <div class="col-5 border border-dark">
+        <div class="col-3 border border-dark font-weight-bold">1: Important/Urgent</div>
+        <div class="col border border-dark">
             <table class="table table-bordered table-striped">
+
+                <thead class="font-weight-bold">
+                    <tr>
+                        <td>Due</td>
+                        <td>Type</td>
+                        <td>Task</td>
+                        <td>Completed?</td>
+                    </tr>
+                </thead>
+
                 <tbody>
-                    @*@foreach (n in Model)
+                    @foreach (var n in Model)
                     {
                         @if (@n.Quadrant == 1)
                         {
@@ -31,20 +35,129 @@
                                 <td>@n.DueDate</td>
                                 <td>@n.Category</td>
                                 <td>@n.Task</td>
-                                <td>@n.Completed</td
-                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskId">Edit</a></td>
-                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@n.TaskId">Delete</a></td>
+                                <td>@n.Completed</td>
+                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskID">Edit</a></td>
+                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@n.TaskID">Delete</a></td>
                             </tr>
                         }
-                    }*@
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+        <div class="row">
+            <div class="col-3 border border-dark font-weight-bold">2: Important/Not Urgent</div>
+            <div class="col border border-dark">
+                <table class="table table-bordered table-striped">
+                    <tbody>
+                        @foreach (var n in Model)
+                        {
+                            @if (@n.Quadrant == 2)
+                            {
+                                <tr>
+                                    <td>@n.DueDate</td>
+                                    <td>@n.Category</td>
+                                    <td>@n.Task</td>
+                                    <td>@n.Completed</td>
+                                    <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskID">Edit</a></td>
+                                    <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@n.TaskID">Delete</a></td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3 border border-dark font-weight-bold">3: Not Important/Urgent</div>
+            <div class="col border border-dark">
+                <table class="table table-bordered table-striped">
+                    <tbody>
+                        @foreach (var n in Model)
+                        {
+                            @if (@n.Quadrant == 3)
+                            {
+                                <tr>
+                                    <td>@n.DueDate</td>
+                                    <td>@n.Category</td>
+                                    <td>@n.Task</td>
+                                    <td>@n.Completed</td>
+                                    <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskID">Edit</a></td>
+                                    <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@n.TaskID">Delete</a></td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3 border border-dark font-weight-bold">4: Not Important/Not Urgent</div>
+            <div class="col border border-dark">
+                <table class="table table-bordered table-striped">
+                    <tbody>
+                        @foreach (var n in Model)
+                        {
+                            @if (@n.Quadrant == 4)
+                            {
+                                <tr>
+                                    <td>@n.DueDate</td>
+                                    <td>@n.Category</td>
+                                    <td>@n.Task</td>
+                                    <td>@n.Completed</td>
+                                    <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskID">Edit</a></td>
+                                    <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@n.TaskID">Delete</a></td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</div>
+
+@*<div class="container">
+    
+    <div class="row">
+        <div class="col border border-dark"><h2>Steven Covey's Time Management Matrix</h2></div>
+    </div>
+
+    <div class="row">
+        <div class="col-2 border border-dark"></div>
+        <div class="col border border-dark">Urgent</div>
+        <div class="col border border-dark">Not Urgent</div>
+    </div>
+
+    <div class="row">
+        <div class="col-2 border border-dark">Important</div>
+        <div class="col border border-dark">
+            <table class="table table-bordered table-striped">
+                <tbody>
+                    @foreach (var n in Model)
+                    {
+                        @if (@n.Quadrant == 1)
+                        {
+                            <tr>
+                                <td>@n.DueDate</td>
+                                <td>@n.Category</td>
+                                <td>@n.Task</td>
+                                <td>@n.Completed</td>
+                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskID">Edit</a></td>
+                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@n.TaskID">Delete</a></td>
+                            </tr>
+                        }
+                    }
                 </tbody>
             </table>
         </div>
 
-        <div class="col-5 border border-dark">
+        <div class="col border border-dark">
             <table class="table table-bordered table-striped">
                 <tbody>
-                    @*@foreach (n in Model)
+                    @foreach (var n in Model)
                     {
                         @if (@n.Quadrant == 2)
                         {
@@ -52,23 +165,23 @@
                                 <td>@n.DueDate</td>
                                 <td>@n.Category</td>
                                 <td>@n.Task</td>
-                                <td>@n.Completed</td
-                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskId">Edit</a></td>
-                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@n.TaskId">Delete</a></td>
+                                <td>@n.Completed</td>
+                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskID">Edit</a></td>
+                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@n.TaskID">Delete</a></td>
                             </tr>
                         }
-                    }*@
+                    }
                 </tbody>
             </table>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-2 border border-dark"><h3>Not Important</h3></div>
-        <div class="col-5 border border-dark">
+        <div class="col-2 border border-dark">Not Important</div>
+        <div class="col border border-dark">
             <table class="table table-bordered table-striped">
                 <tbody>
-                    @*@foreach (n in Model)
+                    @foreach (var n in Model)
                     {
                         @if (@n.Quadrant == 3)
                         {
@@ -76,20 +189,20 @@
                                 <td>@n.DueDate</td>
                                 <td>@n.Category</td>
                                 <td>@n.Task</td>
-                                <td>@n.Completed</td
-                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskId">Edit</a></td>
-                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@n.TaskId">Delete</a></td>
+                                <td>@n.Completed</td>
+                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskID">Edit</a></td>
+                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@n.TaskID">Delete</a></td>
                             </tr>
                         }
-                    }*@
+                    }
                 </tbody>
             </table>
         </div>
 
-        <div class="col-5 border border-dark">
+        <div class="col border border-dark">
             <table class="table table-bordered table-striped">
                 <tbody>
-                    @*@foreach (n in Model)
+                    @foreach (var n in Model)
                     {
                         @if (@n.Quadrant == 4)
                         {
@@ -97,16 +210,16 @@
                                 <td>@n.DueDate</td>
                                 <td>@n.Category</td>
                                 <td>@n.Task</td>
-                                <td>@n.Completed</td
-                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskId">Edit</a></td>
-                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@n.TaskId">Delete</a></td>
+                                <td>@n.Completed</td>
+                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskID">Edit</a></td>
+                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@n.TaskID">Delete</a></td>
                             </tr>
                         }
-                    }*@
+                    }
                 </tbody>
             </table>
         </div>
     </div>
 
-</div>
+</div>*@
 
