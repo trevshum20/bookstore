@@ -6,7 +6,7 @@
 
 <h1>4 Quadrants Task List</h1><br />
 
-<div class="containter">
+@*<div class="containter">
 
     <div class="row">
         <div class="col border border-dark"><h2>Steven Covey's Time Management Matrix</h2></div>
@@ -117,24 +117,24 @@
                 </table>
             </div>
         </div>
-</div>
+</div>*@
 
-@*<div class="container">
+<div class="container">
     
     <div class="row">
-        <div class="col border border-dark"><h2>Steven Covey's Time Management Matrix</h2></div>
+        <div class="col border border-dark text-center"><h2>Steven Covey's Time Management Matrix</h2></div>
     </div>
 
     <div class="row">
-        <div class="col-2 border border-dark"></div>
+        <div class="col-1 border border-dark"></div>
         <div class="col border border-dark">Urgent</div>
         <div class="col border border-dark">Not Urgent</div>
     </div>
 
     <div class="row">
-        <div class="col-2 border border-dark">Important</div>
+        <div class="col-1 border border-dark">Important</div>
         <div class="col border border-dark">
-            <table class="table table-bordered table-striped">
+            <table class="table">
                 <tbody>
                     @foreach (var n in Model)
                     {
@@ -142,7 +142,7 @@
                         {
                             <tr>
                                 <td>@n.DueDate</td>
-                                <td>@n.Category</td>
+                                @*<td>@n.Category</td>*@
                                 <td>@n.Task</td>
                                 <td>@n.Completed</td>
                                 <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskID">Edit</a></td>
@@ -155,7 +155,7 @@
         </div>
 
         <div class="col border border-dark">
-            <table class="table table-bordered table-striped">
+            <table class="table">
                 <tbody>
                     @foreach (var n in Model)
                     {
@@ -163,7 +163,7 @@
                         {
                             <tr>
                                 <td>@n.DueDate</td>
-                                <td>@n.Category</td>
+                                @*<td>@n.Category</td>*@
                                 <td>@n.Task</td>
                                 <td>@n.Completed</td>
                                 <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskID">Edit</a></td>
@@ -177,9 +177,9 @@
     </div>
 
     <div class="row">
-        <div class="col-2 border border-dark">Not Important</div>
+        <div class="col-1 border border-dark">Not Important</div>
         <div class="col border border-dark">
-            <table class="table table-bordered table-striped">
+            <table class="table">
                 <tbody>
                     @foreach (var n in Model)
                     {
@@ -187,7 +187,7 @@
                         {
                             <tr>
                                 <td>@n.DueDate</td>
-                                <td>@n.Category</td>
+                                @*<td>@n.Category</td>*@
                                 <td>@n.Task</td>
                                 <td>@n.Completed</td>
                                 <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskID">Edit</a></td>
@@ -200,7 +200,7 @@
         </div>
 
         <div class="col border border-dark">
-            <table class="table table-bordered table-striped">
+            <table class="table">
                 <tbody>
                     @foreach (var n in Model)
                     {
@@ -208,7 +208,7 @@
                         {
                             <tr>
                                 <td>@n.DueDate</td>
-                                <td>@n.Category</td>
+                                @*<td>@n.Category</td>*@
                                 <td>@n.Task</td>
                                 <td>@n.Completed</td>
                                 <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@n.TaskID">Edit</a></td>
@@ -221,5 +221,5 @@
         </div>
     </div>
 
-</div>*@
+</div>
 
