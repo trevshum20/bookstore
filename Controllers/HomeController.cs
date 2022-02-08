@@ -42,16 +42,55 @@ namespace Bookstore.Controllers
             }
             else
             {
-                return View("Quadrant");
+                return View("AddEdit", req);
             }
-            
+
         }
 
 
-
+        [HttpGet]
         public IActionResult Quadrant()
         {
-            return View();
+            var tasks = YareContext.Responses
+                .ToList();
+            return View(tasks);
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int taskId)
+        {
+            var task = YareContext.Responses.Single(x => x.TaskID == taskId);
+            return View("AddEdit", task);
+
+        }
+
+        [HttpPost]
+        public IActionResult Edit(bretheren bruv)
+        {
+            if (ModelState.IsValid)
+            {
+                YareContext.Update(bruv);
+                YareContext.SaveChanges();
+                return RedirectToAction("Quadrant");
+            }
+            else
+            {
+                return View("AddEdit", bruv);
+            }
+        }
+        [HttpGet]
+        public IActionResult Delete(int taskId)
+        {
+            var task = YareContext.Responses.Single(x => x.TaskID == taskId);
+            return View(task);
+        }
+
+        [HttpPost]
+        public IActionResult Delete (bretheren ar)
+        {
+            YareContext.Responses.Remove(ar);
+            YareContext.SaveChanges();
+            return RedirectToAction("Quadrant");
         }
     }
 }
