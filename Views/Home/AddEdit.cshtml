@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Add/Edit Task";
+}
+
+@model Bookstore.Models.bretheren
+
+<h2>Enter a task and its priority!</h2>
+<div>
+    <form method="post">
+        <label asp-for="Task">Task: </label>
+        <input id="Title" asp-for="Task" required /> <br />
+
+        <label asp-for="DueDate">Due Date: </label>
+        <input type="datetime-local" id="DueDate" asp-for="DueDate" /> <br />
+
+        <label asp-for="Quadrant">Quadrant: </label>
+        <select id="Quadrant" asp-for="Quadrant" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select> <br />
+
+        <label asp-for="Category">Category: </label>
+        <select id="Category" asp-for="Category" required>
+            <option value="1">Home</option>
+            <option value="2">School</option>
+            <option value="3">Work</option>
+            <option value="4">Church</option>
+        </select> <br />
+
+        <label asp-for="Completed">Completed: </label>
+        <select id="Completed" asp-for="Completed" required>
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select> <br />
+
+       
+    </form>
+</div>

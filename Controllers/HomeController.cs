@@ -22,5 +22,9 @@ namespace Bookstore.Controllers
         {
             return View();
         }
+        public IActionResult AddEdit()
+        {
+            return View();
+        }
     }
 }
