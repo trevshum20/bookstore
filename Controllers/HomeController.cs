@@ -97,7 +97,7 @@ namespace Bookstore.Controllers
             task.Completed = "false";
             YareContext.Update(task);
             YareContext.SaveChanges();
-            return RedirectToAction("Quadrant");
+            return RedirectToAction("AllTasks");
         }
 
         [HttpGet]
