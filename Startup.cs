@@ -1,4 +1,11 @@
-﻿using System;
+﻿// Section 3 group 10
+// Bradford Paul, Brendan Lowe, Jared Christensen, Trevor Shumway
+// The purpose of this program is to let someone make a 4 quadrant check list and plan their
+// tasks according to Stephen Covey's importance/ urgency matrix
+
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
