@@ -91,6 +91,15 @@ namespace Bookstore.Controllers
             return RedirectToAction("Quadrant");
         }
 
+        public IActionResult Incomplete(int taskId)
+        {
+            var task = YareContext.Responses.Single(x => x.TaskID == taskId);
+            task.Completed = "false";
+            YareContext.Update(task);
+            YareContext.SaveChanges();
+            return RedirectToAction("Quadrant");
+        }
+
         [HttpGet]
         public IActionResult Delete(int taskId)
         {
